@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 200vh;
+}
+
+.header-title {
+  margin: 48px;
+  text-align: center;
+  color: #124076;
+}
+
+.list-item-data {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.btn-info {
+  margin: 24px;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  background-color: #124076;
+  padding: 12px;
+  color: white;
+  width: 100%;
+}
+
+footer > p {
+  text-align: center;
+}
