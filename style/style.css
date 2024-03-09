@@ -43,14 +43,14 @@ footer > p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #124076;
+  background-color: #fba834;
 }
 
 body:hover::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: #ff407d;
 }
 
-body:hover::-webkit-scrollbar-thumb:hover,
+/* body:hover::-webkit-scrollbar-thumb:hover,
 body:hover::-webkit-scrollbar-thumb:active {
   background-color: #124076;
-}
+} */
