@@ -18,36 +18,150 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="nav mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Pascal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Fadhil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Tegar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Aldi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Arnest</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
     <header>
-      <h1 class="header-title">KELOMPOK ADUHAI</h1>
+      <h1 class="header-title">SELAMAT DATANG DI KELOMPOK KAMI</h1>
       <div class="list-item-data">
         <ul class="list-group">
-          <li class="list-group-item">RAFAEL PASCAL JEREMIAH</li>
-          <li class="list-group-item">FADHIL ABDUL FATTAH</li>
-          <li class="list-group-item">M.TEGAR BAYU AL-FASYA</li>
-          <li class="list-group-item">FISTRIAWAN ALDILLAH</li>
-          <li class="list-group-item">ARNEST SEYFO ERISTIYAN PUTRA</li>
+          <li class="list-group-item">
+            <div class="row gx-5">
+              <div class="col p-3">
+                <div class="p-3" id="pascal">RAFAEL PASCAL JEREMIAH</div>
+              </div>
+              <div class="col">
+                <div class="p-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    See CV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item" id="fadhil">
+            <div class="row gx-5">
+              <div class="col p-3">
+                <div class="p-3" id="pascal">FADHIL ABDUL FATTAH</div>
+              </div>
+              <div class="col">
+                <div class="p-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    See CV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item" id="tegar">
+            <div class="row gx-5">
+              <div class="col p-3">
+                <div class="p-3" id="pascal">M.TEGAR BAYU AL-FASYA</div>
+              </div>
+              <div class="col">
+                <div class="p-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    See CV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item" id="aldi">
+            <div class="row gx-5">
+              <div class="col p-3">
+                <div class="p-3" id="pascal">FISTRIAWAN ALDILLAH</div>
+              </div>
+              <div class="col">
+                <div class="p-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    See CV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="list-group-item" id="arnest">
+            <div class="row gx-5">
+              <div class="col p-3">
+                <div class="p-3" id="pascal">ARNEST SEYFO ERISTIYAN PUTRA</div>
+              </div>
+              <div class="col">
+                <div class="p-3">
+                  <button
+                    type="button"
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                  >
+                    See CV
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </header>
 
-    <div class="container text-center btn-info" id="alert-info">
-      <div class="row">
+    <div class="container text-center btn-info container-modal" id="alert-info">
+      <div class="row p-3">
         <button
           type="button"
           class="btn btn-outline-info"
@@ -59,6 +173,7 @@
       </div>
     </div>
 
+    <!-- Modal  -->
     <div
       class="modal fade"
       id="staticBackdrop"
@@ -71,9 +186,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
-              Modal title
-            </h1>
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">CV</h1>
             <button
               type="button"
               class="btn-close"
@@ -89,16 +202,6 @@
               <p>This is github logo</p>
             </div>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Understood</button>
-          </div>
         </div>
       </div>
     </div>
@@ -106,5 +209,12 @@
     <footer>
       <p>THIS IS FOOTER</p>
     </footer>
+    <script>
+      const searchBar = document.getElementById("search-bar");
+
+      searchBar.addEventListener("click", (event) => {
+        event.preventDefault();
+      });
+    </script>
   </body>
 </html>
