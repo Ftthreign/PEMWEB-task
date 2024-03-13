@@ -114,6 +114,7 @@ footer > p {
 
 ::-webkit-scrollbar-thumb {
   background-color: #fba834;
+  border-radius: 6px;
 }
 
 body:hover::-webkit-scrollbar-thumb {
