@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #124076;
-  --secondary-color: #ff407d;
+  --primary-color: #387ADF;
+  --secondary-color: #FBA834;
 }
 
 ::selection {
-  background-color: #fba834;
-  color: black;
+  background-color: #333A73;
+  color: #000000;
 }
 
 * {
