@@ -73,7 +73,13 @@ body {
 }
 
 .navigate-cv:hover {
-  box-shadow: 0 0 20px 2px #48abe0;
+  box-shadow: 0 0 10px 5px #48abe0;
+  background-color: #ff84ab; 
+}
+
+.navigate-cv:active {
+  background-color: #FBA834;
+  color: white;
 }
 
 .list-item-data {
@@ -124,7 +130,7 @@ body {
 }
 
 .member-image:hover {
-  box-shadow: 0 0 20px 12px #48abe0;
+  box-shadow: 0 0 10px 5px #48abe0;
   transform: rotate(0);
 }
 
