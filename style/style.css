@@ -11,19 +11,12 @@
 * {
   box-sizing: border-box;
   padding: 0;
+  scroll-behavior: smooth;
   margin: 0;
 }
 
 body {
   overflow-x: hidden;
-}
-
-.fixed-top {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
 }
 
 .navbar-header {
@@ -156,7 +149,7 @@ footer > p {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--secondary-color);
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
 body:hover::-webkit-scrollbar-thumb {

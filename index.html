@@ -22,49 +22,31 @@
     <!-- Navigation Section -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
-        <a class="navbar-header" href="#">Home</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="nav mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#pascal"
-                >Pascal</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#fadhil"
-                >Fadhil</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#tegar"
-                >Tegar</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#aldi"
-                >Aldi</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#arnest"
-                >Arnest</a
-              >
-            </li>
-          </ul>
-        </div>
+          <a class="navbar-header" href="#">Home</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="nav mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#pascal">Pascal</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#fadhil">Fadhil</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#tegar">Tegar</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#aldi">Aldi</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#arnest">Arnest</a>
+                  </li>
+              </ul>
+          </div>
       </div>
-    </nav>
+  </nav>
 
     <!-- Header Section -->
     <header>
@@ -233,7 +215,7 @@
             src="./img/cv/CV pascal.jpeg"
             id="cv-pascal"
             alt="cv pascal"
-            width="350px"
+            width="500px"
           />
         </div>
         <div>
@@ -242,7 +224,7 @@
             src="./img/cv/CV fadhil.jpg"
             id="cv-fadhil"
             alt="cv fadhil"
-            width="350px"
+            width="500px"
           />
         </div>
         <div>
@@ -251,7 +233,7 @@
             src="./img/cv/CV tegar.jpeg"
             id="cv-tegar"
             alt="cv tegar"
-            width="350px"
+            width="500px"
           />
         </div>
         <div>
@@ -260,7 +242,7 @@
             src="./img/cv/CV aldi.jpeg"
             id="cv-aldi"
             alt="cv aldi"
-            width="350px"
+            width="500px"
           />
         </div>
         <div>
@@ -269,7 +251,7 @@
             src="./img/cv/CV arnest.jpeg"
             id="cv-arnest"
             alt="cv arnest"
-            width="350px"
+            width="500px"
           />
         </div>
       </div>
@@ -280,5 +262,30 @@
       <p>Copyright by Kelompok A - 2023</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+     <!-- JavaScript Section -->
+     <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function scrollAdjustment(elementId) {
+          const navbarHeight = document.querySelector('.navbar').offsetHeight; 
+          const element = document.getElementById(elementId); 
+          const offset = -275; 
+          const elementPosition = element.offsetTop - navbarHeight + offset;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth' 
+          });
+        }
+    
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const targetId = this.getAttribute('href').substring(1);
+            scrollAdjustment(targetId); 
+          });
+        });
+      });
+    </script>
   </body>
 </html>
