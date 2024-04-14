@@ -20,10 +20,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+    <button class="back-to-index">
+        <a href="index.php">Kembali ke halaman utama</a>
+    </button>
+
     <h2>Daftar Tamu</h2>
     <?php 
             if(!isset($_SESSION['tamu']) || count($_SESSION['tamu']) == 0) {?>
-                <h1 class="none-guest">Tidak ada tamu yang terdata</h1>
+                <p class="none-guest">Tidak ada tamu yang terdata</p>
         <?php   } else { ?>
             <table border="1">
                 <tr>
@@ -51,8 +55,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php } ?>
             </table>
         <?php } ?>
-    <button class="back-to-index">
-        <a href="index.php">Kembali ke halaman utama</a>
-    </button>
 </body>
 </html>
