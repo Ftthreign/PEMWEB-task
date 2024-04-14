@@ -20,9 +20,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'waktu_keluar' => $waktu_keluar,
             );
             
-            // if(!isset($_SESSION['tamu'])) {
-            //     $_SESSION['tamu'] = array();
-            // }
+            if(!isset($_SESSION['tamu'])) {
+                $_SESSION['tamu'] = array();
+            }
 
             $_SESSION['tamu'][] = $tamu_baru;
             header("Location: index.php");
@@ -41,18 +41,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-    <div class="back-container">
-        <button class="back-to-index">
-            <a href="index.php">Kembali ke halaman utama</a>
-        </button>
+    <button class="back-to-index">
+        <a href="index.php">Kembali ke halaman utama</a>
+    </button>
+        
+    
+    <div class="add-guest-container">
         <h2><?php echo "TAMBAH TAMU"?></h2>
-    </div>
-
-    <?php if(isset($_SESSION['error_message'])) { ?>
-        <h2><?php echo $_SESSION['error_message'] ?></h2>
+        
+        <?php if(isset($_SESSION['error_message'])) { ?>
+        <p class="error-message"><?php echo $_SESSION['error_message'] ?></p>
         <?php unset($_SESSION['error_message'])?>
     <?php }?>
-
+    
     <form action="" method="post">
         <label for="nama">Nama:</label><br>
         <input type="text" id="nama" name="nama"><br>
@@ -64,5 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="time" id="waktu_keluar" name="waktu_keluar"><br><br>
         <button type="submit" name="submit">Tambah tamu</button>
     </form>
+</div>
+
 </body>
 </html>

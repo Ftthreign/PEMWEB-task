@@ -7,14 +7,18 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body> 
-    <h2 class="title"><?php echo "Selamat datang di Session login kami"?></h2>
-    <div class="menu-container">
-        <ul class="menu">
-            <li><a href="add_guest.php">Tambah Tamu</a></li>
-            <li>
-                <a href="view_guest.php">Lihat Tamu</a>
-            </li>
-        </ul>
+    <div class="wrapper-menu">
+        <div class="menu-container">
+            <h2 class="title"><?php echo "Selamat datang di Session login Tamu kami"?></h2>
+            <ul class="menu">
+                <li>
+                    <a href="add_guest.php">Tambah Tamu</a>
+                </li>
+                <li>
+                    <a href="view_guest.php">Lihat Tamu</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>
