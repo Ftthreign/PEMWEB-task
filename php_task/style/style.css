@@ -127,10 +127,6 @@ th {
   font-weight: 300;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
 /* 
     add_guest.php
     login.php
@@ -155,13 +151,18 @@ input[type="submit"]:hover {
 }
 
 .login-wrapper,
-.add-guest-container {
+.add-guest-container,
+.view-guest-container {
   max-width: 400px;
   margin: 1em auto;
   padding: 20px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   background-color: var(--container-color);
+}
+
+.view-guest-container {
+  max-width: 70rem;
 }
 
 label {
@@ -212,8 +213,7 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-.error-message,
-.none-guest {
+.error-message {
   color: red;
   text-align: center;
   margin: 1em;
