@@ -66,6 +66,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <button type="submit" name="submit">Tambah tamu</button>
     </form>
 </div>
-
 </body>
 </html>

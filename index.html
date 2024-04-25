@@ -22,31 +22,49 @@
     <!-- Navigation Section -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div class="container-fluid">
-          <a class="navbar-header" href="#">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul class="nav mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#pascal">Pascal</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#fadhil">Fadhil</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#tegar">Tegar</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#aldi">Aldi</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#arnest">Arnest</a>
-                  </li>
-              </ul>
-          </div>
+        <a class="navbar-header" href="#">Home</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="nav mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#pascal"
+                >Pascal</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#fadhil"
+                >Fadhil</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#tegar"
+                >Tegar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#aldi"
+                >Aldi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#arnest"
+                >Arnest</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-  </nav>
+    </nav>
 
     <!-- Header Section -->
     <header>
@@ -263,28 +281,28 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-     <!-- JavaScript Section -->
-     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        function scrollAdjustment(elementId) {
-          const navbarHeight = document.querySelector('.navbar').offsetHeight; 
-          const element = document.getElementById(elementId); 
-          const offset = -275; 
-          const elementPosition = element.offsetTop - navbarHeight + offset;
-          window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth' 
-          });
-        }
-    
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            const targetId = this.getAttribute('href').substring(1);
-            scrollAdjustment(targetId); 
-          });
-        });
+    <!-- JavaScript Section -->
+    <script>
+      // document.addEventListener("DOMContentLoaded", function() {
+      //   function scrollAdjustment(elementId) {
+      //     const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      //     const element = document.getElementById(elementId);
+      //     const offset = -275;
+      //     const elementPosition = element.offsetTop - navbarHeight + offset;
+      //     window.scrollTo({
+      //       top: elementPosition,
+      //       behavior: 'smooth'
+      //     });
+      //   }
+
+      //   const navLinks = document.querySelectorAll('.nav-link');
+      //   navLinks.forEach(link => {
+      //     link.addEventListener('click', function(event) {
+      //       event.preventDefault();
+      //       const targetId = this.getAttribute('href').substring(1);
+      //       scrollAdjustment(targetId);
+      //     });
+      //   });
     </script>
   </body>
 </html>
