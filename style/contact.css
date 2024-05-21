@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #124076;
+  --secondary-color: #ff407d;
+}
+
+form {
+  border: 2px solid var(--primary-color);
+  padding: 1.5em;
+  margin: 1em;
+  border-radius: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="submit"] {
+  background: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background: #218838;
+}
+
+.critics {
+  margin: 2em;
+}
+
+.critics::after {
+  content: "";
+  position: absolute;
+  width: 5em;
+  margin: 0.1em auto;
+  height: 4px;
+  background-color: var(--secondary-color);
+  display: block;
+}

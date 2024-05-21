@@ -1,10 +1,10 @@
 :root {
   --primary-color: #124076;
-  --secondary-color: #FF407D;
+  --secondary-color: #ff407d;
 }
 
 ::selection {
-  background-color: #FBA834;
+  background-color: #fba834;
   color: #000000;
 }
 
@@ -49,6 +49,10 @@ body {
   position: relative;
 }
 
+.critics {
+  margin: 2em;
+}
+
 .header-title::after {
   content: "";
   width: 10em;
@@ -68,17 +72,30 @@ body {
   text-decoration: none;
   color: black;
   font-weight: 600;
+}
+
+.navigate-cv:nth-child(odd) {
   background-color: var(--secondary-color);
   transition: box-shadow 200ms ease-in-out;
 }
 
-.navigate-cv:hover {
-  box-shadow: 0 0 10px 5px #48abe0;
-  background-color: #ff84ab; 
+.navigate-cv:nth-child(even) {
+  background-color: #fba834;
+  transition: box-shadow 200ms ease-in-out;
+}
+
+.navigate-cv:nth-child(odd):hover {
+  box-shadow: 0 0 10px 5px rgba(230, 54, 106, 0.5);
+  background-color: #ff5a95;
+}
+
+.navigate-cv:nth-child(even):hover {
+  box-shadow: 0 0 10px 5px rgba(230, 149, 46, 0.5);
+  background-color: #ffb84d;
 }
 
 .navigate-cv:active {
-  background-color: #FBA834;
+  background-color: #fba834;
   color: white;
 }
 
@@ -100,7 +117,8 @@ body {
 }
 
 .profile-section::after,
-.cv-section::after {
+.cv-section::after,
+.critics::after {
   content: "";
   position: absolute;
   width: 5em;
@@ -160,4 +178,13 @@ footer > p {
 
 body:hover::-webkit-scrollbar-thumb {
   background-color: #fba834;
+}
+
+.social-icons:hover {
+  box-shadow: 0 0 10px 5px rgb(59, 89, 152);
+}
+
+.social-icons {
+  border-radius: 8px;
+  transition: box-shadow 200ms ease-in-out;
 }
