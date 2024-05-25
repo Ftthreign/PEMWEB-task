@@ -7,3 +7,5 @@ KELOMPOK PSTI C :
 - ARNEST SEYFO ERISTIYAN PUTRA (2215061135)
 
 > PREVIEW PAGE
+
+<img src="./img/mockup__homepage.png" alt="homepage">
