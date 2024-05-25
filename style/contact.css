@@ -36,14 +36,15 @@ input[type="submit"]:hover {
 }
 
 .critics {
-  margin: 2em;
+  margin: 3.2em;
+  position: relative;
 }
 
 .critics::after {
   content: "";
   position: absolute;
   width: 5em;
-  margin: 0.1em auto;
+  margin: 0.2em auto;
   height: 4px;
   background-color: var(--secondary-color);
   display: block;

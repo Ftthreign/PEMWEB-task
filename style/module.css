@@ -1,0 +1,30 @@
+:root {
+  --primary-color: #124076;
+  --secondary-color: #ff407d;
+}
+
+.module {
+  margin: 5em 0 2em 2em;
+  width: 200px;
+}
+
+.module::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+footer {
+  bottom: 0;
+  position: sticky;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-text-full {
+  display: none;
+}
