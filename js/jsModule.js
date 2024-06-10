@@ -16,13 +16,13 @@ function showResult(exampleNumber) {
 
   switch (exampleNumber) {
     case 1:
-      result = `var x = 5;<br>let y = 10;<br>const z = 15;`;
+      result = `x : 5<br>y : 10<br>z : 15`;
       break;
     case 2:
       let name = "John";
       let age = 30;
       let isStudent = true;
-      result = `Name: ${name}<br>Age: ${age}<br>Is Student: ${isStudent}`;
+      result = `name : ${name}<br>age : ${age}<br>isStudent : ${isStudent}`;
       break;
     case 3:
       function greet(name) {

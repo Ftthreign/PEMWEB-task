@@ -159,6 +159,15 @@ body {
   margin: 0 auto;
 }
 
+#typing-animate {
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  color: #fba834;
+  font-style: oblique;
+  height: 3rem;
+}
+
 .member-image {
   border-radius: 8px;
   transition: all 200ms ease-in-out;

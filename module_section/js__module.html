@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Materi JavaScript - Kelompok Aduhai</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/fontAwesome.css" />
     <link rel="shortcut icon" href="/img/code.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -15,7 +13,6 @@
     />
     <link rel="stylesheet" href="../style/module.css" />
     <link rel="stylesheet" href="../style/style.css" />
-    <link rel="stylesheet" href="./style/js__section.css" />
     <style>
       .code-box {
         background-color: #f8f9fa;
@@ -74,7 +71,10 @@
         <code>
           var x = 5;<br />
           let y = 10;<br />
-          const z = 15;
+          const z = 15;<br />
+          console.log(`x : ${x}`)<br />
+          console.log(`y : ${y}`) <br />
+          console.log(`z : ${z}`)
         </code>
       </div>
       <button class="btn btn-secondary" onclick="toggleResult(1)">
@@ -87,7 +87,10 @@
         <code>
           let name = "John";<br />
           let age = 30;<br />
-          let isStudent = true;
+          let isStudent = true;<br />
+          console.log(`name : ${name}`)<br />
+          console.log(`age : ${age}`) <br />
+          console.log(`isStudentt : ${isStudent}`)
         </code>
       </div>
       <button class="btn btn-secondary" onclick="toggleResult(2)">
@@ -112,6 +115,7 @@
       <h3>4. Percabangan</h3>
       <div class="code-box">
         <code>
+          let x = 10<br />
           if (x > 0) {<br />
           &nbsp;&nbsp;console.log("Positif");<br />
           } else {<br />
@@ -197,8 +201,13 @@
       <div class="result-box" id="result-9"></div>
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-top: 20px">
       <div class="row">
+        <div class="col">
+          <button class="btn btn-primary">
+            <a href="css__module.html" style="color: white">Sebelumnya</a>
+          </button>
+        </div>
         <div class="col">
           <button class="btn btn-primary">
             <a href="php__module.html" style="color: white">Berikutnya</a>

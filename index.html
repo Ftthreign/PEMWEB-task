@@ -53,6 +53,14 @@
                 >Module</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="calculator.html"
+                >Calculator</a
+              >
+            </li>
           </ul>
         </div>
       </div>
@@ -62,6 +70,10 @@
     <header>
       <h1 class="header-title m-5 p-5">SELAMAT DATANG DI KELOMPOK KAMI</h1>
     </header>
+
+    <section>
+      <span id="typing-animate">Practice Make it perfect</span>
+    </section>
 
     <section class="module-navigate">
       <h3><a href="./module.html">Lihat modul yang kami susun</a></h3>
@@ -410,8 +422,24 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
       AOS.init();
+
+      var typed = new Typed("#typing-animate", {
+        strings: [
+          "Code is like humor.",
+          "Simplicity is key.",
+          "Life is short, build.",
+          "Figure it out.",
+          "Love what you do.",
+        ],
+        typeSpeed: 90,
+        loop: true,
+        smartBackspace: true,
+        shuffle: true,
+        cursorChar: "|",
+      });
     </script>
   </body>
 </html>
