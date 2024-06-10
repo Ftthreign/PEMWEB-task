@@ -80,6 +80,24 @@ body {
   text-decoration: none;
 }
 
+.calculator-navigate {
+  text-align: center;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  padding: 0.25em;
+  border-radius: 12px;
+  transition: all 200ms ease-in-out;
+}
+
+.calculator-navigate:hover {
+  background-color: var(--primary-color);
+}
+
+.calculator-navigate a {
+  color: white;
+  text-decoration: none;
+}
+
 .npm {
   color: var(--secondary-color);
 }
