@@ -57,6 +57,45 @@ body {
   display: block;
 }
 
+<<<<<<< Updated upstream
+=======
+.module-navigate {
+  text-align: center;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  padding: 0.25em;
+  border-radius: 12px;
+  transition: all 200ms ease-in-out;
+}
+
+.module-navigate:hover {
+  background-color: var(--primary-color);
+}
+
+.module-navigate a {
+  color: white;
+  text-decoration: none;
+}
+
+.calculator-navigate {
+  text-align: center;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  padding: 0.25em;
+  border-radius: 12px;
+  transition: all 200ms ease-in-out;
+}
+
+.calculator-navigate:hover {
+  background-color: var(--primary-color);
+}
+
+.calculator-navigate a {
+  color: white;
+  text-decoration: none;
+}
+
+>>>>>>> Stashed changes
 .npm {
   color: var(--secondary-color);
 }
