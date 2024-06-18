@@ -18,25 +18,34 @@
 body {
   overflow-x: hidden;
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f2f5;
+  padding: 70px;
+  overflow-y: auto; /* Agar container bisa di-scroll */
 }
 
-.calculator-container {
+.calculator-box {
   background-color: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 500px; /* Sesuaikan lebar maksimal */
   text-align: center;
   margin: 0 auto;
 }
 
-h2 {
+h1 {
   margin-bottom: 20px;
   color: var(--primary-color);
 }
@@ -74,9 +83,7 @@ button:hover {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  position: static; /* Ubah dari fixed ke static */
   background-color: var(--secondary-color);
   padding: 12px;
   color: white;
@@ -84,6 +91,7 @@ footer {
   border-top: 4px solid #fba834;
   text-align: center;
   font-weight: 600;
+  margin-top: 20px;
 }
 
 .navbar-header {

@@ -19,6 +19,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- Navigation Section -->
@@ -67,25 +68,62 @@
     </nav>
 
     <!-- Main Section -->
-    <!-- Main Section -->
     <div class="container">
       <div class="calculator-box">
         <h1>Kalkulator Kurban</h1>
         <form id="kurbanForm">
-          <label for="jumlahOrang">Jumlah Orang</label>
-          <input type="number" id="jumlahOrang" name="jumlahOrang" required />
-
+          <!-- Pilih Jenis Hewan -->
           <label for="jenisHewan">Pilih Jenis Hewan:</label>
           <select id="jenisHewan" name="jenisHewan" required>
             <option value="">Pilih</option>
-            <option value="kambing">Kambing</option>
-            <option value="sapi">Sapi</option>
+            <option value="kambing" data-orang="1">
+              Kambing (untuk 1 orang)
+            </option>
+            <option value="sapi" data-orang="7">Sapi (untuk 7 orang)</option>
+            <option value="kerbau" data-orang="7">
+              Kerbau (untuk 7 orang)
+            </option>
+            <option value="unta" data-orang="7">Unta (untuk 7 orang)</option>
           </select>
 
-          <label for="harga">Harga dalam Rupiah :</label>
+          <!-- Jumlah Orang -->
+          <label for="jumlahOrang">Jumlah Orang yang Mau Ikut Nabung</label>
+          <input type="number" id="jumlahOrang" name="jumlahOrang" required />
+
+          <!-- Harga Hewan -->
+          <label for="harga">Harga Hewan dalam Rupiah :</label>
           <input type="number" id="harga" name="harga" required />
 
-          <button type="button" onclick="hitungKurban()">Hitung Kurban</button>
+          <!-- Tanggal Mulai -->
+          <label for="tanggalMulai">Tanggal Mulai:</label>
+          <input type="date" id="tanggalMulai" name="tanggalMulai" required />
+
+          <!-- Tanggal Selesai -->
+          <label for="tanggalSelesai">Tanggal Selesai:</label>
+          <input
+            type="date"
+            id="tanggalSelesai"
+            name="tanggalSelesai"
+            required
+          />
+
+          <!-- Durasi Nabung -->
+          <label for="durasi">Durasi Nabung (bulan):</label>
+          <input type="number" id="durasi" name="durasi" readonly />
+
+          <!-- Frekuensi Nabung -->
+          <label for="frekuensi">Frekuensi Nabung:</label>
+          <select id="frekuensi" name="frekuensi" required>
+            <option value="">Pilih</option>
+            <option value="1">Per hari</option>
+            <option value="7">Per minggu</option>
+            <option value="14">2 minggu sekali</option>
+            <option value="21">3 minggu sekali</option>
+            <option value="30">Sebulan sekali</option>
+            <option value="0">Langsung beli</option>
+          </select>
+
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -102,19 +140,159 @@
 
     <!-- JS Section -->
     <script>
-      function hitungKurban() {
+      document
+        .getElementById("tanggalMulai")
+        .addEventListener("change", updateDurasi);
+      document
+        .getElementById("tanggalSelesai")
+        .addEventListener("change", updateDurasi);
+
+      document
+        .getElementById("jenisHewan")
+        .addEventListener("change", function () {
+          const jenisHewan = this.value;
+          const maxOrang = this.selectedOptions[0].dataset.orang;
+          document.getElementById("jumlahOrang").max = maxOrang;
+          document.getElementById("jumlahOrang").value = ""; // Reset nilai input jumlah orang
+        });
+
+      document
+        .getElementById("kurbanForm")
+        .addEventListener("submit", hitungKurban);
+
+      function updateDurasi() {
+        const tanggalMulai = document.getElementById("tanggalMulai").value;
+        const tanggalSelesai = document.getElementById("tanggalSelesai").value;
+        const durasiInput = document.getElementById("durasi");
+
+        if (tanggalMulai && tanggalSelesai) {
+          const mulai = new Date(tanggalMulai);
+          const selesai = new Date(tanggalSelesai);
+          const durasiBulan =
+            (selesai.getFullYear() - mulai.getFullYear()) * 12 +
+            (selesai.getMonth() - mulai.getMonth());
+          durasiInput.value = durasiBulan >= 0 ? durasiBulan : 0;
+        } else {
+          durasiInput.value = 0;
+        }
+      }
+
+      function hitungKurban(event) {
+        event.preventDefault(); // Prevent the default form submission
+
         const jumlahOrang = document.getElementById("jumlahOrang").value;
         const jenisHewan = document.getElementById("jenisHewan").value;
         const harga = document.getElementById("harga").value;
+        const tanggalMulai = document.getElementById("tanggalMulai").value;
+        const tanggalSelesai = document.getElementById("tanggalSelesai").value;
+        const frekuensi = document.getElementById("frekuensi").value;
+        const durasi = document.getElementById("durasi").value;
 
-        if (jumlahOrang && jenisHewan && harga) {
-          let hasil = harga / jumlahOrang;
-          alert(
-            `Harga per orang untuk ${jenisHewan} adalah Rp ${hasil.toFixed(2)}`
-          );
+        if (
+          jumlahOrang &&
+          jenisHewan &&
+          harga &&
+          tanggalMulai &&
+          tanggalSelesai &&
+          frekuensi
+        ) {
+          // Mengambil data jumlah orang dari pilihan jenis hewan
+          const hewanSelect = document.getElementById("jenisHewan");
+          const selectedHewan = hewanSelect.options[hewanSelect.selectedIndex];
+          const maxOrangPerHewan = selectedHewan.dataset.orang;
+
+          // Validasi jumlah orang sesuai dengan jenis hewan yang dipilih
+          if (jumlahOrang > maxOrangPerHewan) {
+            Swal.fire(
+              "Error",
+              `Jumlah orang melebihi kapasitas ${jenisHewan} yang hanya untuk ${maxOrangPerHewan} orang`,
+              "error"
+            );
+            return;
+          }
+
+          // Harga per orang
+          const hargaPerOrang = harga / maxOrangPerHewan;
+
+          // Perhitungan jumlah tabungan
+          let jumlahTabunganPerSesiOrang;
+          let sesiNabung; // Declare sesiNabung variable here to use it outside the if-else block
+          if (frekuensi !== "0") {
+            const totalHari = durasi * 30; // Total hari dalam durasi bulan
+            sesiNabung = totalHari / frekuensi;
+            jumlahTabunganPerSesiOrang = hargaPerOrang / sesiNabung; // Per sesi per orang
+          } else {
+            sesiNabung = 1; // Set to 1 for direct purchase case
+            jumlahTabunganPerSesiOrang = hargaPerOrang; // Langsung beli
+          }
+
+          // Jumlah total per orang
+          const totalPerOrang = hargaPerOrang;
+
+          // Jumlah total per sesi
+          const totalPerSesi = harga / durasi;
+
+          // Format the numbers with thousand separators
+          const formattedTotalPerSesi = totalPerSesi.toLocaleString("id-ID", {
+            minimumFractionDigits: 0,
+          });
+          const formattedTotalPerOrang = totalPerOrang.toLocaleString("id-ID", {
+            minimumFractionDigits: 0,
+          });
+          const formattedJumlahTabunganPerSesiOrang =
+            jumlahTabunganPerSesiOrang.toLocaleString("id-ID", {
+              minimumFractionDigits: 0,
+            });
+
+          // Generate the summary
+          let summary = `
+  <b>Jenis Hewan:</b> ${selectedHewan.textContent}<br>
+  <b>Jumlah Orang:</b> ${jumlahOrang}<br>
+  <b>Harga Hewan:</b> Rp ${parseInt(harga).toLocaleString("id-ID")}<br>
+  <b>Tanggal Mulai:</b> ${tanggalMulai}<br>
+  <b>Tanggal Selesai:</b> ${tanggalSelesai}<br>
+  <b>Durasi Nabung:</b> ${durasi} bulan<br>
+  <b>Frekuensi Nabung:</b> ${
+    frekuensi === "0" ? "Langsung beli" : frekuensi + " hari sekali"
+  }<br>
+  <b>Total Tabungan Semua Orang per Sesi:</b> Rp ${formattedTotalPerSesi}<br>
+  <b>Total Tabungan 1 Orang Selama Periode:</b> Rp ${formattedTotalPerOrang}<br>
+  <b>Total Tabungan 1 Orang per Sesi:</b> Rp ${formattedJumlahTabunganPerSesiOrang}
+`;
+
+          // Display the summary using SweetAlert2
+          Swal.fire({
+            title: "Struk Nabung Kurban",
+            html: summary,
+            icon: "info",
+            confirmButtonText: "Simpan",
+            showCancelButton: true,
+            cancelButtonText: "Tutup",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              saveReceipt(summary);
+            }
+          });
         } else {
-          alert("Mohon isi semua field!");
+          Swal.fire("Error", "Mohon isi semua field!", "error");
         }
+      }
+
+      function saveReceipt(content) {
+        // Convert the content to a blob
+        const blob = new Blob([content], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+
+        // Create a link element
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "struk_kurban.html";
+
+        // Simulate a click to trigger the download
+        link.click();
+
+        // Revoke the object URL to free up memory
+        URL.revokeObjectURL(url);
       }
     </script>
   </body>
